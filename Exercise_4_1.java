@@ -5,6 +5,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.Scene;
 import javafx.event.*;
 import javax.swing.JOptionPane; 
+import javafx.scene.control.TextField;
 
 public class  Exercise_4_1 extends Application 
 {
@@ -18,7 +19,10 @@ public class  Exercise_4_1 extends Application
 		String correctUsername = "Evan";
 		String correctPassword = "12345";
 		primaryStage.setTitle("Authentication");
-		
+		TextField usernameTxtFld = new TextField();
+		TextField passwordTxtFld = new TextField();
+
+
 		Button loginBtn = new Button("Login");
 		loginBtn.setOnAction(new EventHandler<ActionEvent>()
 		{
@@ -37,6 +41,8 @@ public class  Exercise_4_1 extends Application
 		});
 
 		StackPane root = new StackPane();
+		root.getChildren().add(usernameTxtFld);
+		root.getChildren().add(passwordTxtFld);
 		root.getChildren().add(loginBtn);
 		
 		Scene scene = new Scene(root, 300,300);
